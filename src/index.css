@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media print {
+  @page {
+    size: landscape;
+    margin: 1cm;
+  }
+
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Ensure the table fits on one page */
+  table {
+    font-size: 11pt;
+    width: 100%;
+    page-break-inside: avoid;
+  }
+
+  /* Improve table cell spacing for print */
+  td, th {
+    padding: 8px !important;
+  }
+
+  /* Remove unnecessary shadows and effects */
+  * {
+    box-shadow: none !important;
+  }
+}
